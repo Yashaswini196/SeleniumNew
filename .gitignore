@@ -49,3 +49,7 @@ maven/
 maven-repository/
 •maven-cache/ maven-metadata-local.xml
 •
+
+# Logs
+logs/
+*.log
