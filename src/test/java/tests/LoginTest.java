@@ -37,7 +37,7 @@ public class LoginTest extends BaseTest {
                 {"user1","pass1"}
         };
     }
-//    @Test(dataProvider = "LoginData2")
+    @Test(dataProvider = "LoginData2")
     public void TestValidLogin(String email, String password) throws IOException {
         Log.info("Starting the Validation");
         test = ExtentReportManager.createTest("Login Test - "+email);
@@ -82,8 +82,8 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(driver.getTitle(), "Welcome");
     }
 
-    @Test()
-    @Parameters({"email","password"})
+//    @Test()
+//    @Parameters({"email","password"})
     public void TestValidLoginTestNG(String email, String password) throws IOException {
         Log.info("Starting the Validation");
         test = ExtentReportManager.createTest("Login Test - "+email);
