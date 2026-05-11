@@ -1,5 +1,7 @@
 <suite name="LoginSuite">
     <test name ="LoginTests">
+        <parameter name="email" value="admin@yourstore.com"/>
+        <parameter name="password" value="admin"/>
         <classes >
             <class name ="tests.LoginTest"/>
         </classes>

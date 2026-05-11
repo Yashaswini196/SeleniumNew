@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -29,7 +30,11 @@ public class BaseTest {
     @BeforeMethod
     public void setUp(){
         Log.info("Starting WebDriver");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+        options.setExperimentalOption("useAutomationExtension", false);
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         Log.info("Navigating to the URL");
         driver.get("https://admin-demo.nopcommerce.com/login");
