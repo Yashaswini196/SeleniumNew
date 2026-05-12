@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest {
     public Object[][] getData(){
         return new Object[][]{
                 {"admin@yourstore.com","admin"},
-//                {"user1","pass1"}
+                {"user1","pass1"}
         };
     }
     @Test(dataProvider = "LoginData2")
